@@ -1,0 +1,75 @@
+{% extends "edunet/layout.html" %}
+
+{% block body %}
+
+        {% if message %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endif %}
+
+        <!-- Jumbotron -->
+        <div class="jumbotron text-center lighten-4">
+
+            <!-- Title -->
+            <br><h1><strong>Upload File</strong></h1> <br> <br>
+            <br>
+            <br> <br> <br>
+            <!-- <hr class="my-4 pb-2"> -->
+    
+            <!-- Grid row -->
+            <div class="text-left">
+    
+                <form action="{% url 'createlisting' %}" method="POST" enctype = "multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input class="form-control" autofocus type="text" name="title" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="description" rows="4" placeholder="Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="category" placeholder="Category" required>
+                            <option value="">Choose a Category</option>
+                            <option value="Notes">Notes</option>
+                            <option value="Books">Books</option>
+                            <option value="Assignments">Assignments</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control" name="school" placeholder="school" required>
+                            <option value="">Choose a School</option>
+                            <option value="Notre Dame Catholic High School">Notre Dame Catholic High School</option>
+                            <option value="Fairfield Warde High School">Fairfield Warde High School</option>
+                            <option value="Fairfield Ludlowe High School">Fairfield Ludlowe High School</option>
+                            <option value="Fairfield Alternative High School">Fairfield Alternative High School</option>
+                            <option value="Bullard-Havens Technical High School"></option>Bullard-Havens Technical High School
+                            <option value="Trumbull High School">Trumbull High School</option>
+                            <option value="Frank Scott Bunnell High School">Frank Scott Bunnell High Schooll</option>
+                            <option value="Bassick High School">Bassick High School</option>
+                            <option value="Central High School">Central High School</option>
+                            <option value="Frank Scott Bunnell High School">Fairchild Wheeler Interdistrict Multi-Magnet Campus</option>
+                            <option value="Monroe-Trumbull Regional Alternative High School">Monroe-Trumbull Regional Alternative High School</option>
+                            <option value="Shelton High School">Shelton High School</option>
+                        </select>
+                    </div>
+
+                     <div class="form-group">
+                        <input class="form-control" type="text" name="class" placeholder="Choose a class(Optional)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="Grade" placeholder="Grade">
+                    </div>
+                 
+                    <div class="form-group">
+                        <input class="form-control" type="file"  name="file"  placeholder = "file">
+                    </div>
+
+                    
+                    <input class="btn btn-primary" type="submit" value="Create">
+                </form>
+            </div>
+        </div>
+        <!-- End Jumbotron -->
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "edunet/layout.html" %}
+
+{% block body %}
+    <br>
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center mx-2 mb-5">
+
+        <!-- Title -->
+        <h2 class="card-title h2">CATEGORIES</h2>
+        <!-- Subtitle -->
+        <p class="my-4 h6">Select a Category to view Listings in that category.</p>
+        <br> <br>
+        <!-- Grid row -->
+        <div class="row d-flex justify-content-center">
+            <!-- Grid column -->
+            <div class="col-xl-7 pb-2">
+                <ul class="list-group">
+                    <a href="{% url 'category' 'Notes' %}"><li class="list-group-item"><i class="fas fa-dice mr-5"></i> Notes</li></a>
+                    <a href="{% url 'category' 'Assignments' %}"><li class="list-group-item"><i class="fas fa-laptop mr-5"></i> Assignments</li></a>
+                    <a href="{% url 'category' 'Books' %}"><li class="list-group-item"><i class="fas fa-book-open mr-5"></i> Books</li></a>
+                </ul>
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+    </div>
+    <!-- Jumbotron -->
+{% endblock %}

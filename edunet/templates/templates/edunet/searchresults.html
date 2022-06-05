@@ -1,0 +1,17 @@
+{% extends 'edunet/layout.html' %}
+
+
+{% block body %}
+ {% if results %}
+    {% for item in results %}
+        <h2 class="display-2">Found pages:</h2>
+        <li class="entry-link"><a href=/upload/item.id>{{ item }}</a></li>
+        
+    {% endfor %}
+ {% else %}
+    <h3 class="no-item">No results</h3>
+ {% endif%}
+
+
+  
+{% endblock %}
